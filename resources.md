@@ -1,2 +1,3 @@
-- https://course.rs/about-book.html
+- [Rust 语言圣经](https://course.rs/about-book.html)
 - [Rust 语言中文社区](https://rustcc.cn/)
+- [Rust 入门秘籍](https://rust-book.junmajinlong.com/)
