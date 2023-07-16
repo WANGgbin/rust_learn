@@ -1,0 +1,2 @@
+- https://course.rs/about-book.html
+- [Rust 语言中文社区](https://rustcc.cn/)
