@@ -3,9 +3,14 @@ fn main() {
 
     let ref1 = &mut x;
 
-    let ref2 = &x;
+    // let ref2 = &x;
 
     *ref1 = 1;
 
-    println!("{}", x);
+    let mut s = 1; 
+
+    let s_ref = &mut s;
+    let tmp = *s_ref;
+
+    println!("{}, {}", x, tmp);
 }
