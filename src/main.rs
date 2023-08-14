@@ -7,6 +7,11 @@ fn longest<'a, 'b>(str1: &'a str, str2: &'b str) -> &'a str {
     str1
 }
 
+enum test_enum {
+    one(u32),
+    two(String),
+}
+
 fn main() {
     let str1 = String::from("hello");
     let ret = &str1;
@@ -16,4 +21,5 @@ fn main() {
     println!("ret addres: {:p}, data of ret2: {:p}", &ret, ret2);
     println!("len({}), len({})", ret3.len(), ret2.len());
     println!("{} {} {} {} {}", size_of::<&String>(), size_of::<&str>(), size_of::<&&String>(), size_of::<&&str>(), size_of::<String>());
+    println!("{}", size_of::<test_enum>())
 }
