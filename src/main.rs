@@ -1,25 +1,50 @@
-use std::{mem::size_of, string};
+use std::mem;
 
-fn longest<'a, 'b>(str1: &'a str, str2: &'b str) -> &'a str {
-    if str1.len() > str2.len() { 
-       return str1;
-    }
-    str1
+trait ATrait {
+    fn fn_two(&self) -> ();
 }
 
-enum test_enum {
-    one(u32),
-    two(String),
+struct MyString {
+    name: String,
+}
+
+impl ATrait for MyString {
+    fn fn_two(&self) -> () {
+        println!("call ATrait::fn_two");
+    }
+
+}
+
+impl ATrait for &MyString {
+    fn fn_two(&self) ->() {
+        println!("call &MyString::fn_two");
+    }
+}
+
+impl MyString {
+    fn new() -> MyString {
+        MyString {
+            name: String::from("Hello"),
+        }
+    }
+    fn fn_mute(&mut self) -> () {
+        println!("call &mut self::fn_one");
+    }
+
+    fn fn_unmute(&self) -> () {
+        println!("call &self::fn_one");
+    }
+}
+
+
+fn print(obj: &dyn ATrait) {
+    obj.fn_two();
+}
+
+fn template_fn<T>() {
+    println!("xxx");
 }
 
 fn main() {
-    let str1 = String::from("hello");
-    let ret = &str1;
-
-    let ret2 = &ret;
-    let ret3 = &ret2; 
-    println!("ret addres: {:p}, data of ret2: {:p}", &ret, ret2);
-    println!("len({}), len({})", ret3.len(), ret2.len());
-    println!("{} {} {} {} {}", size_of::<&String>(), size_of::<&str>(), size_of::<&&String>(), size_of::<&&str>(), size_of::<String>());
-    println!("{}", size_of::<test_enum>())
+    template_fn::<i32>();
 }

@@ -1,3 +1,4 @@
 - [Rust 语言圣经](https://course.rs/about-book.html)
 - [Rust 语言中文社区](https://rustcc.cn/)
 - [Rust 入门秘籍](https://rust-book.junmajinlong.com/)
+- [Rust 程序语言设计](https://rustwiki.org/zh-CN/book/ch07-02-defining-modules-to-control-scope-and-privacy.html)

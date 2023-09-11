@@ -38,15 +38,8 @@ fn print_name(obj: impl Person) -> () {
     println!("name: {}", obj.copy());
 }
 
+
 fn main() {
-    let mut s = Student {
-        name: String::from("xiaoming"),
-        age: 32,
-    };
-
-    print(&mut s);
-    print_age(&s);
-    print_name(s); 
+    let stu = Strdent{name: String::from("hello"), age: 20};
+    println!("{}", stu.age());
 }
-
-

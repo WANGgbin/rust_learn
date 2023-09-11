@@ -1,22 +1,18 @@
+use std::ops::Deref;
 
 enum TestEnum {
-    STRING(String),
-    ARR(String),
+    STRING(i16),
+    ARR(i8),
 }
 
-fn test_func() {
-    let enum_1 = TestEnum::ARR(String::from("key"));
-    let enum_2 = TestEnum::STRING(String::from("test"));
-
-    match enum_2 {
-        TestEnum::STRING(str) => println!("{}", str),
-        TestEnum::ARR(arr) => (),
-        _ => (),
-    };
+struct person {
+    name: String,
+    age: i32,
 }
 
 fn main() {
-    test_func();
+    let p1 = &person{name: String::from("hello"), age: 10};
+    println!("{}", p1.name);
 }
 
 // fn extract_value(some: &Option<String>) -> String {
